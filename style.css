@@ -1,0 +1,704 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    padding: 8px;
+    color: #333;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.en-title {
+    font-size: 0.85em;
+    color: #666;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.75em;
+    line-height: 1.4;
+}
+
+.en-subtitle {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+.instruction {
+    color: #888;
+    font-size: 0.7em;
+    line-height: 1.4;
+    margin-top: 6px;
+}
+
+.en-instruction {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+.emotion-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.emotion-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    min-height: 185px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emotion-card.completed {
+    border-color: #4caf50;
+    background: #f1f8f4;
+}
+
+.emotion-card.active {
+    border-color: #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+.emotion-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000 !important;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+.color-picker-container {
+    margin-bottom: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-picker-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.75em;
+}
+
+.color-picker-wrapper {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 0;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border: none;
+    border-radius: 0;
+}
+
+.selected-color {
+    margin-top: 6px;
+    padding: 5px;
+    background: white;
+    border-radius: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.7em;
+    color: #666;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 6px;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.75em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 6px;
+    line-height: 1.2;
+}
+
+.confirm-btn:hover {
+    background: #3a5a8a;
+}
+
+.confirm-btn:active {
+    background: #2a4a75;
+}
+
+.confirm-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background: #e0e0e0;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 9px;
+}
+
+.progress-text {
+    text-align: center;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    padding: 8px 25px;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+    line-height: 1.3;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* 平板设备 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .emotion-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .emotion-card {
+        padding: 8px;
+        min-height: 190px;
+    }
+    
+    .emotion-name {
+        font-size: 0.85em;
+    }
+}
+
+/* 移动设备 */
+@media (max-width: 768px) {
+    body {
+        padding: 6px;
+    }
+    
+    .container {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.1em;
+        margin-bottom: 4px;
+    }
+    
+    .en-title {
+        font-size: 0.75em;
+    }
+    
+    .subtitle {
+        font-size: 0.7em;
+    }
+    
+    .en-subtitle {
+        font-size: 0.8em;
+    }
+    
+    .instruction {
+        font-size: 0.65em;
+    }
+    
+    .en-instruction {
+        font-size: 0.75em;
+    }
+    
+    header {
+        margin-bottom: 10px;
+    }
+
+    .emotion-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .emotion-card {
+        padding: 8px;
+        min-height: 180px;
+    }
+    
+    .emotion-name {
+        font-size: 0.8em;
+        margin-bottom: 6px;
+    }
+    
+    .color-picker-label {
+        font-size: 0.7em;
+        margin-bottom: 5px;
+    }
+    
+    .color-picker-wrapper {
+        height: 30px;
+    }
+    
+    .selected-color {
+        padding: 4px;
+        font-size: 0.65em;
+    }
+    
+    .confirm-btn {
+        padding: 5px;
+        font-size: 0.7em;
+    }
+    
+    .progress-bar {
+        height: 15px;
+    }
+    
+    .progress-text {
+        font-size: 0.75em;
+    }
+    
+    .submit-btn {
+        padding: 6px 20px;
+        font-size: 0.75em;
+    }
+}
+
+/* 小屏手机 */
+@media (max-width: 480px) {
+    body {
+        padding: 4px;
+    }
+    
+    .container {
+        padding: 6px;
+    }
+    
+    .emotion-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+    
+    .emotion-card {
+        padding: 6px;
+        min-height: 170px;
+    }
+    
+    .emotion-name {
+        font-size: 0.75em;
+        margin-bottom: 5px;
+    }
+    
+    .color-picker-label {
+        font-size: 0.65em;
+        margin-bottom: 4px;
+    }
+    
+    .color-picker-wrapper {
+        height: 28px;
+    }
+    
+    .selected-color {
+        padding: 3px;
+        font-size: 0.6em;
+    }
+    
+    .confirm-btn {
+        padding: 4px;
+        font-size: 0.65em;
+    }
+    
+    h1 {
+        font-size: 1em;
+    }
+    
+    .en-title {
+        font-size: 0.7em;
+    }
+    
+    .subtitle {
+        font-size: 0.65em;
+    }
+    
+    .en-subtitle {
+        font-size: 0.75em;
+    }
+    
+    .instruction {
+        font-size: 0.6em;
+    }
+    
+    .en-instruction {
+        font-size: 0.7em;
+    }
+    
+    .progress-bar {
+        height: 12px;
+    }
+    
+    .progress-text {
+        font-size: 0.7em;
+    }
+    
+    .submit-btn {
+        padding: 5px 15px;
+        font-size: 0.7em;
+    }
+}
+
+/* 知情同意书样式 */
+.consent-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.consent-section {
+    margin-bottom: 20px;
+}
+
+.consent-section h2 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.consent-section h3 {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.consent-section p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.en-text {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+.contact-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.consent-button-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.consent-btn {
+    padding: 12px 40px;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+}
+
+.consent-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.consent-btn:active {
+    transform: translateY(-1px);
+}
+
+/* 预问卷样式 */
+.questionnaire-form {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.radio-label:hover {
+    background: #e9ecef;
+    border-color: #667eea;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.radio-label span {
+    flex: 1;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.radio-label input[type="radio"]:checked + span {
+    color: #333;
+    font-weight: 500;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-button-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+/* 移动设备适配 - 知情同意书和预问卷 */
+@media (max-width: 768px) {
+    .consent-content {
+        padding: 15px;
+    }
+    
+    .consent-section {
+        margin-bottom: 15px;
+    }
+    
+    .consent-section h2 {
+        font-size: 1em;
+    }
+    
+    .consent-section p {
+        font-size: 0.85em;
+    }
+    
+    .en-text {
+        font-size: 0.85em;
+    }
+    
+    .consent-btn {
+        padding: 10px 30px;
+        font-size: 0.9em;
+    }
+    
+    .questionnaire-form {
+        padding: 15px;
+    }
+    
+    .form-section h2 {
+        font-size: 1em;
+    }
+    
+    .form-label {
+        font-size: 0.85em;
+    }
+    
+    .radio-label {
+        padding: 8px;
+    }
+    
+    .radio-label span {
+        font-size: 0.85em;
+    }
+    
+    .text-input {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .consent-content {
+        padding: 10px;
+    }
+    
+    .consent-section h2 {
+        font-size: 0.95em;
+    }
+    
+    .consent-section p {
+        font-size: 0.8em;
+    }
+    
+    .en-text {
+        font-size: 0.8em;
+    }
+    
+    .consent-btn {
+        padding: 8px 25px;
+        font-size: 0.85em;
+    }
+    
+    .questionnaire-form {
+        padding: 10px;
+    }
+    
+    .form-section h2 {
+        font-size: 0.95em;
+    }
+    
+    .form-label {
+        font-size: 0.8em;
+    }
+    
+    .radio-label span {
+        font-size: 0.8em;
+    }
+    
+    .text-input {
+        font-size: 0.8em;
+    }
+}
+

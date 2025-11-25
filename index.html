@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情绪与颜色对应关系调查 / Emotion-Color Mapping Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 第一页：知情同意书 -->
+    <div class="page" id="consentPage">
+        <div class="container">
+            <header>
+                <h1>知情同意书<br><span class="en-title">Consent Form</span></h1>
+            </header>
+
+            <div class="consent-content">
+                <div class="consent-section">
+                    <h2>项目名称: 物理可视化：关于情绪和颜色对应关系调查</h2>
+                    <p class="en-text">Project Title: Physicalization: Survey on the Correspondence between Emotions and Colors</p>
+                </div>
+
+                <div class="consent-section">
+                    <p><strong>1.</strong> 本人确认已阅读并了解了该项目相关研究信息，并已从项目负责人处得到充分考虑时间，就相关问题进行了提问，且得到满意答复。</p>
+                    <p class="en-text"><strong>1.</strong> I confirm that I have read and understood the relevant research information of this project. I have received sufficient time to consider the information from the project leader, asked questions about relevant matters, and received satisfactory answers.</p>
+                </div>
+
+                <div class="consent-section">
+                    <p><strong>2.</strong> 本人知晓对该项目的参与为自愿行为，可在任何时间无条件退出研究，无需说明理由，退出后本人的合法权利不受任何影响。</p>
+                    <p class="en-text"><strong>2.</strong> I understand that my participation in this project is voluntary, and I may withdraw from the research unconditionally at any time without giving a reason, and my legitimate rights will not be affected in any way after withdrawal.</p>
+                </div>
+
+                <div class="consent-section">
+                    <p><strong>3.</strong> 本人知晓可在任何时间要求获取本人提供的研究相关信息，若有需求，也可要求销毁本人提供的个人信息，相关要求会得到妥善处理。</p>
+                    <p class="en-text"><strong>3.</strong> I understand that I may request access to the research-related information provided by me at any time, and if needed, I may also request the destruction of the personal information provided by me, and relevant requests will be properly handled.</p>
+                </div>
+
+                <div class="consent-section">
+                    <p><strong>4.</strong> 本人自愿同意参加此项研究。</p>
+                    <p class="en-text"><strong>4.</strong> I agree to participate in this research.</p>
+                </div>
+
+                <div class="consent-section contact-info">
+                    <h3>项目负责人的联系方式如下：</h3>
+                    <p class="en-text">The contact details of lead Researcher (Principal Investigator) are:</p>
+                    <p><strong>姓名：</strong>郭琪 | 计算机科学与技术 大三</p>
+                    <p class="en-text"><strong>Name:</strong> Qi Guo | Computer Science and Technology</p>
+                    <p><strong>电话：</strong>+86 18301853782</p>
+                    <p class="en-text"><strong>Phone:</strong> +86 18301853782</p>
+                    <p><strong>电子邮箱：</strong>Qi.Guo23@student.xjtlu.edu.cn</p>
+                    <p class="en-text"><strong>Email:</strong> Qi.Guo23@student.xjtlu.edu.cn</p>
+                    <p><strong>办公地址：</strong>中国江苏省苏州市仁爱路111号 西交利物浦大学</p>
+                    <p class="en-text"><strong>Office Address:</strong> Xi'an Jiaotong-Liverpool University, No. 111 Ren'ai Road, Suzhou, Jiangsu Province, China</p>
+                </div>
+
+                <div class="consent-button-section">
+                    <button class="consent-btn" id="consentBtn">确认参加 / I Agree to Participate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二页：预问卷 -->
+    <div class="page" id="preQuestionnairePage" style="display: none;">
+        <div class="container">
+            <header>
+                <h1>预问卷<br><span class="en-title">Pre-questionnaire</span></h1>
+            </header>
+
+            <form id="preQuestionnaireForm" class="questionnaire-form">
+                <div class="form-section">
+                    <h2>基本信息 / Basic Information</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What is your gender? 您的性别是什么</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male" required>
+                                <span>Male 男士</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female" required>
+                                <span>Female 女士</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="prefer-not-say" required>
+                                <span>Prefer not to say 不愿透露</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Which age group do you belong to? 您属于哪个年龄组？</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="under-18" required>
+                                <span>Under 18 18岁以下</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="18-25" required>
+                                <span>18-25 years old 18-25岁</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="26-35" required>
+                                <span>26-35 years old 26-35岁</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="36-45" required>
+                                <span>36-45 years old 36-45岁</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="age" value="45-above" required>
+                                <span>45 years old and above 45岁以上</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>背景信息 / Background</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">What is your highest degree or equivalent? 您的最高学历是什么</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="education" value="high-school" required>
+                                <span>High school diploma or equivalent 高中文凭或同等学历</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="education" value="bachelor" required>
+                                <span>Bachelor's degree or equivalent 学士学位或同等学历</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="education" value="master" required>
+                                <span>Master's degree or equivalent 硕士学位或同等学历</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="education" value="doctoral" required>
+                                <span>Doctoral degree or equivalent 博士学位或同等学历</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="education" value="other" required>
+                                <span>Other, please specify 其他，请注明</span>
+                            </label>
+                        </div>
+                        <input type="text" name="education-other" id="educationOther" class="text-input" placeholder="请在此填写 / Please specify here" style="display: none;">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">How proficient or skilled do you believe you are at psychology? 您认为自己在心理学方面的熟练程度或技能水平如何？</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="psychology" value="no-knowledge" required>
+                                <span>No knowledge at all 一点都不了解</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="psychology" value="beginner" required>
+                                <span>Beginner 初级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="psychology" value="intermediate" required>
+                                <span>Intermediate 中级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="psychology" value="advanced" required>
+                                <span>Advanced 高级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="psychology" value="expert" required>
+                                <span>Expert 专业</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">How proficient or skilled do you believe you are at visualization? 您认为自己在可视化方面的熟练程度或技能水平如何？</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="visualization" value="no-knowledge" required>
+                                <span>No knowledge at all 一点都不了解</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="visualization" value="beginner" required>
+                                <span>Beginner 初级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="visualization" value="intermediate" required>
+                                <span>Intermediate 中级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="visualization" value="advanced" required>
+                                <span>Advanced 高级</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="visualization" value="expert" required>
+                                <span>Expert 专业</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-button-section">
+                    <button type="submit" class="submit-btn">继续 / Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 第三页：情绪颜色映射调查 -->
+    <div class="page" id="surveyPage" style="display: none;">
+        <div class="container">
+            <header>
+                <h1>情绪与颜色对应关系调查<br><span class="en-title">Emotion-Color Mapping Survey</span></h1>
+                <p class="subtitle">请为每种情绪选择您认为最匹配的颜色<br><span class="en-subtitle">Please select the color that best matches each emotion</span></p>
+            </header>
+
+            <div class="emotion-section" id="emotionSection">
+                <!-- 情绪卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">0 / 6 已完成 / Completed</p>
+
+            <div class="submit-section" id="submitSection" style="display: none;">
+                <button class="submit-btn" id="submitBtn">提交调查结果 / Submit Survey</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
